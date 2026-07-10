@@ -27,6 +27,27 @@ const navItems = [
   { label: "Apply", path: "#/apply" },
 ];
 
+const heroSlides = [
+  {
+    label: "Private strength floor",
+    image: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=2400&q=90",
+    position: "center 48%",
+    mobilePosition: "58% center",
+  },
+  {
+    label: "Individual strength coaching",
+    image: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=2400&q=90",
+    position: "center 42%",
+    mobilePosition: "52% center",
+  },
+  {
+    label: "Conditioning for travel",
+    image: "https://images.unsplash.com/photo-1599058917765-a780eda07a3e?auto=format&fit=crop&w=2400&q=90",
+    position: "center 48%",
+    mobilePosition: "62% center",
+  },
+];
+
 const residencies = [
   {
     slug: "red-eye-reset",
@@ -225,14 +246,32 @@ function Router({ route }) {
 }
 
 function Home() {
+  const [slideIndex, setSlideIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setSlideIndex((current) => (current + 1) % heroSlides.length);
+    }, 5200);
+
+    return () => window.clearTimeout(timer);
+  }, [slideIndex]);
+
   return (
     <>
       <section className="hero" aria-label="Vantage Performance Club">
-        <img
-          className="hero-image"
-          src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=2400&q=90"
-          alt="Private strength training floor"
-        />
+        {heroSlides.map((slide, index) => (
+          <img
+            className={`hero-image ${index === slideIndex ? "visible" : ""}`}
+            src={slide.image}
+            alt={index === slideIndex ? slide.label : ""}
+            aria-hidden={index !== slideIndex}
+            style={{
+              "--hero-position": slide.position,
+              "--hero-position-mobile": slide.mobilePosition,
+            }}
+            key={slide.image}
+          />
+        ))}
         <div className="hero-vignette" />
         <div className="hero-plate">
           <p className="kicker">Private performance / Dubai + remote</p>
@@ -252,8 +291,20 @@ function Home() {
             </a>
           </div>
         </div>
+        <div className="hero-pagination" aria-label="Select hero image">
+          {heroSlides.map((slide, index) => (
+            <button
+              className={index === slideIndex ? "active" : ""}
+              type="button"
+              aria-label={`Show ${slide.label}`}
+              aria-pressed={index === slideIndex}
+              onClick={() => setSlideIndex(index)}
+              key={slide.label}
+            />
+          ))}
+        </div>
         <div className="hero-note">
-          <span>Now accepting Q3</span>
+          <span aria-live="polite">{String(slideIndex + 1).padStart(2, "0")} / 03 &nbsp; {heroSlides[slideIndex].label}</span>
           <span>12 memberships available</span>
         </div>
       </section>

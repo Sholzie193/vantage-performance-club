@@ -190,9 +190,16 @@ button { border: 0; color: inherit; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 48%;
+  object-position: var(--hero-position, center 48%);
+  opacity: 0;
+  transform: scale(1.035);
   filter: saturate(0.58) contrast(1.11) brightness(0.75);
+  pointer-events: none;
+  transition: opacity 900ms ease, transform 6200ms ease;
+  will-change: opacity, transform;
 }
+
+.hero-image.visible { opacity: 1; transform: scale(1); }
 
 .hero-vignette {
   position: absolute;
@@ -229,6 +236,45 @@ h1, h2, h3 {
 }
 
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 29px; }
+
+.hero-pagination {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  right: max(22px, calc((100vw - 1320px) / 2));
+  transform: translateY(-50%);
+  display: grid;
+  gap: 2px;
+}
+
+.hero-pagination button {
+  position: relative;
+  width: 40px;
+  height: 28px;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hero-pagination button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 18px;
+  height: 2px;
+  transform: translateY(-50%);
+  background: rgba(251, 252, 248, 0.54);
+  transition: width 180ms ease, background 180ms ease;
+}
+
+.hero-pagination button.active::after,
+.hero-pagination button:hover::after {
+  width: 40px;
+  background: var(--accent);
+}
+
+.hero-pagination button:focus-visible { outline: 2px solid var(--paper-bright); outline-offset: 2px; }
 
 .hero-note {
   position: absolute;
@@ -415,11 +461,15 @@ h1, h2, h3 {
   .mobile-drawer { top: 68px; min-height: calc(100svh - 68px); }
   .drawer-inner { min-height: calc(100svh - 68px); }
   .hero { min-height: 108svh; padding: 66svh 20px 30px; }
-  .hero-image { object-position: 58% center; }
+  .hero-image { object-position: var(--hero-position-mobile, 58% center); }
   .hero-vignette { background: linear-gradient(180deg, rgba(16,18,15,0.04) 0%, rgba(16,18,15,0.12) 43%, rgba(16,18,15,0.96) 86%); }
   .hero-plate { width: min(100%, 650px); }
   .hero h1 { font-size: clamp(48px, 12vw, 70px); }
   .hero-note { display: none; }
+  .hero-pagination { top: 53svh; right: 8px; transform: none; }
+  .hero-pagination button { width: 34px; height: 28px; }
+  .hero-pagination button.active::after,
+  .hero-pagination button:hover::after { width: 30px; }
   .hero-plate > p:not(.kicker) { margin-top: 18px; font-size: 15px; }
   .hero-actions { margin-top: 22px; }
   .signal-strip { grid-template-columns: repeat(2, 1fr); }
