@@ -4,40 +4,27 @@ import {
   ArrowLeft,
   ArrowRight,
   CalendarDays,
+  Check,
+  Clock3,
+  Dumbbell,
   Fingerprint,
   Gauge,
+  MapPin,
   Menu,
   Plane,
   Radar,
+  ShieldCheck,
   X,
 } from "lucide-react";
 import "./styles.css";
 
 const navItems = [
   { label: "Home", path: "#home" },
-  { label: "System", path: "#/system" },
-  { label: "Residencies", path: "#/residencies" },
+  { label: "Method", path: "#/system" },
+  { label: "Programs", path: "#/residencies" },
   { label: "Fieldhouse", path: "#/fieldhouse" },
-  { label: "Dispatch", path: "#/dispatch" },
+  { label: "Journal", path: "#/dispatch" },
   { label: "Apply", path: "#/apply" },
-];
-
-const heroSlides = [
-  {
-    label: "Midnight strength floor",
-    image:
-      "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=2400&q=88",
-  },
-  {
-    label: "Travel-proof conditioning",
-    image:
-      "https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=2400&q=88",
-  },
-  {
-    label: "Private recovery protocol",
-    image:
-      "https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=2400&q=88",
-  },
 ];
 
 const residencies = [
@@ -46,112 +33,106 @@ const residencies = [
     title: "Red-Eye Reset",
     eyebrow: "10 days",
     location: "Dubai / Singapore",
+    price: "From US$6,800",
+    capacity: "Four starts each month",
     image:
       "https://images.unsplash.com/photo-1598971639058-fab3c3109a00?auto=format&fit=crop&w=1400&q=86",
-    copy: "A fast decompression block for founders landing after fundraising, launches, or three-city weeks.",
-    stats: ["Sleep rebuild", "Mobility triage", "Low-friction meals"],
+    copy: "A coached re-entry block for long-haul travel, disrupted sleep, and a calendar that cannot pause.",
+    stats: ["Five coached sessions", "Sleep and mobility review", "Departure plan"],
   },
   {
     slug: "operator-strength",
-    title: "Operator Strength",
-    eyebrow: "12 weeks",
-    location: "Hybrid",
+    title: "Private Membership",
+    eyebrow: "12 weeks minimum",
+    location: "Fieldhouse + remote",
+    price: "From US$2,400 / month",
+    capacity: "12 members per coach",
     image:
       "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=1400&q=86",
-    copy: "A progressive strength cycle for executives who want visible capability without a public gym routine.",
-    stats: ["Four lifts weekly", "Body comp target", "Board-week deloads"],
+    copy: "Two private sessions each week, individual programming, quarterly reviews, and support between cities.",
+    stats: ["Two coached sessions weekly", "Quarterly assessment", "Travel rewrites"],
   },
   {
     slug: "nomad-continuity",
-    title: "Nomad Continuity",
-    eyebrow: "Ongoing",
-    location: "Global",
+    title: "Global Continuity",
+    eyebrow: "12 weeks minimum",
+    location: "Worldwide",
+    price: "From US$1,250 / month",
+    capacity: "Remote coaching",
     image:
       "https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?auto=format&fit=crop&w=1400&q=86",
-    copy: "A travel operating system for founders moving between hotels, apartments, and unfamiliar equipment.",
-    stats: ["Hotel translations", "City maps", "Weekly recalibration"],
+    copy: "A remote strength and conditioning plan rebuilt around each hotel, apartment, or temporary gym.",
+    stats: ["Weekly coach review", "Equipment substitutions", "Async support"],
   },
   {
     slug: "board-week-engine",
-    title: "Board Week Engine",
+    title: "Executive Reset",
     eyebrow: "6 weeks",
-    location: "London / NYC",
+    location: "Dubai / London",
+    price: "From US$4,200",
+    capacity: "Six starts each quarter",
     image:
       "https://images.unsplash.com/photo-1599058917765-a780eda07a3e?auto=format&fit=crop&w=1400&q=86",
-    copy: "Conditioning, posture, and recovery for leaders entering investor meetings, media, and high-pressure travel.",
-    stats: ["Zone work", "Posture protocol", "Energy reporting"],
+    copy: "A focused conditioning and recovery block before board cycles, media, or sustained business travel.",
+    stats: ["Strength and conditioning", "Posture protocol", "Recovery schedule"],
   },
 ];
 
 const pageData = {
   system: {
-    kicker: "Operating System",
-    title: "Training logic for people whose calendar is a contact sport.",
+    kicker: "The Vantage Standard",
+    title: "One plan. Rewritten for the week you actually have.",
     image:
       "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1800&q=88",
     copy:
-      "Vantage treats training as executive infrastructure: assessment, strength, conditioning, recovery, and nutrition translated into the real week instead of an ideal week.",
-    chips: ["Movement audit", "Travel rules", "Recovery dashboard"],
+      "Assessment, strength, conditioning, recovery, and travel planning sit in one coaching relationship. The program changes when your workload, location, or equipment changes.",
+    chips: ["Quarterly assessment", "Weekly programming", "24-hour travel rewrite"],
     cards: [
-      ["Signal first", "We map sleep, stress, equipment access, injuries, calendar density, and current capacity before prescribing load."],
-      ["No fragile plans", "Every block includes hotel, apartment, and no-equipment fallbacks so momentum survives flights and investor weeks."],
-      ["Measured quietly", "Progress is tracked through strength markers, body composition, HRV trends, posture, and subjective energy."],
+      ["01 / Assess", "We document movement, strength, injury history, sleep, travel frequency, equipment access, and the outcome that matters."],
+      ["02 / Build", "Your coach creates a 12-week block with clear progression, session duration, recovery targets, and fallback versions."],
+      ["03 / Adapt", "Travel plans and high-pressure weeks are rewritten within one business day, not treated as missed weeks."],
     ],
   },
   residencies: {
-    kicker: "Private Residencies",
-    title: "Short blocks for leaders between markets, deals, and time zones.",
+    kicker: "Programs",
+    title: "Defined blocks for strength, travel, and recovery.",
     image:
       "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=88",
     copy:
-      "Residencies compress the work: private coaching, recovery windows, simple nutrition, and a portable plan you can carry into the next city.",
-    chips: ["10 days", "21 days", "Team weeks"],
+      "Choose a long-term private membership, remote continuity, or a short residency. Every option begins with an assessment and ends with a plan you can continue.",
+    chips: ["From 10 days", "Private or remote", "Limited quarterly intake"],
     cards: [
-      ["Founder landing", "A focused first week for founders arriving in Dubai, Singapore, Lisbon, or London with poor sleep and no routine."],
-      ["Performance block", "A structured training residency for leaders preparing for board cycles, stages, offsites, or public visibility."],
-      ["Team protocol", "Small executive teams can book private weeks with assessments, training, recovery, and travel systems."],
+      ["Private membership", "Two coached sessions each week, individual programming, quarterly reviews, and travel support from US$2,400 per month."],
+      ["Global continuity", "Remote coaching for members moving between cities, with weekly review and equipment-specific rewrites from US$1,250 per month."],
+      ["Executive residency", "Ten-day and six-week private blocks combining assessment, coaching, recovery, and a departure program from US$6,800."],
     ],
   },
   fieldhouse: {
-    kicker: "Fieldhouse",
-    title: "A private floor without gym theater.",
+    kicker: "Dubai Fieldhouse",
+    title: "A private training floor, available by appointment.",
     image:
       "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1800&q=88",
     copy:
-      "The room is quiet, exact, and appointment-only. Strength racks, sled lanes, recovery bays, consult rooms, and coach stations are organized for repeatable work.",
-    chips: ["4:1 floor ratio", "Recovery bay", "Private entry"],
+      "The Fieldhouse is designed for focused coaching: one strength floor, one recovery room, private changing, and no open-gym traffic.",
+    chips: ["DIFC, Dubai", "Mon-Sat / 06:00-21:00", "Private arrival"],
     cards: [
-      ["Strength floor", "Racks, platforms, dumbbells, cables, sleds, and conditioning tools selected for useful work rather than spectacle."],
-      ["Recovery lab", "Mobility, breathwork, soft tissue, heat, and decompression windows scheduled around the training block."],
-      ["Travel desk", "Coach-built hotel gym plans, restaurant defaults, and equipment substitutions for each member's next city."],
+      ["Training floor", "Two platforms, cable stations, dumbbells, sled lane, cardio equipment, and mobility space selected for coached sessions."],
+      ["Recovery room", "Quiet post-session space for mobility, breathwork, soft-tissue work, and coach-led recovery protocols."],
+      ["Travel desk", "Before departure, members receive the exact session, equipment substitutions, and schedule for their next location."],
     ],
   },
   dispatch: {
-    kicker: "Dispatch",
-    title: "Briefings for high-output bodies in motion.",
+    kicker: "Journal",
+    title: "Useful notes from the coaching floor.",
     image:
       "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1800&q=88",
     copy:
-      "Short notes from the floor on travel training, executive recovery, meals that do not make dinner weird, and the difference between discipline and design.",
+      "Short, specific guidance on strength, travel, recovery, and nutrition for people whose week changes faster than a standard program can follow.",
     chips: ["Travel", "Strength", "Recovery"],
     cards: [
-      ["The three-gym rule", "How to build a week around the hotel gym, the office gym, and the one proper session you can actually protect."],
-      ["The founder deload", "When to reduce volume before the calendar breaks the plan for you."],
-      ["Dinner math", "Practical ordering defaults for members eating with clients, investors, and teams."],
-    ],
-  },
-  apply: {
-    kicker: "Membership",
-    title: "Selective intake for founders, CEOs, and operators in motion.",
-    image:
-      "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=1800&q=88",
-    copy:
-      "Membership begins with a confidential intake. We review goals, health history, travel rhythm, equipment access, and the periods where your routine usually fails.",
-    chips: ["Quarterly starts", "Private intake", "Limited members"],
-    cards: [
-      ["01 / Map", "Share current training, calendar pressure, travel markets, injury history, and the outcome you need."],
-      ["02 / Diagnose", "Complete a fit call and receive a recommended residency, remote block, or hybrid structure."],
-      ["03 / Operate", "Start with a clear training block, recovery schedule, nutrition defaults, and travel continuity plan."],
+      ["42 minutes in a hotel gym", "A practical session structure when the equipment list is short and the workday is not."],
+      ["When to reduce training volume", "Four signals your coach uses to change the week before fatigue changes it for you."],
+      ["A workable client-dinner default", "A simple ordering framework that supports body composition without making dinner awkward."],
     ],
   },
 };
@@ -204,7 +185,7 @@ function Nav({ route, drawerOpen, setDrawerOpen }) {
         ))}
       </nav>
       <a className="nav-cta" href="#/apply">
-        Apply
+        Private intake
         <ArrowRight size={15} />
       </a>
       <button
@@ -214,7 +195,7 @@ function Nav({ route, drawerOpen, setDrawerOpen }) {
         aria-expanded={drawerOpen}
         onClick={() => setDrawerOpen((open) => !open)}
       >
-        {drawerOpen ? <X size={22} /> : <Menu size={22} />}
+        {drawerOpen ? <X size={21} /> : <Menu size={21} />}
       </button>
       <div className={`mobile-drawer ${drawerOpen ? "open" : ""}`} aria-hidden={!drawerOpen}>
         <div className="drawer-inner">
@@ -223,7 +204,7 @@ function Nav({ route, drawerOpen, setDrawerOpen }) {
               {item.label}
             </a>
           ))}
-          <p>Private strength, recovery, and travel systems for founders and operators.</p>
+          <p>Private strength, conditioning, and travel coaching for founders and executives.</p>
         </div>
       </div>
     </header>
@@ -238,80 +219,73 @@ function Router({ route }) {
   }
 
   const key = route.replace("#/", "").replace("#", "");
+  if (key === "apply") return <ApplyPage />;
   if (key && key !== "home" && pageData[key]) return <Page data={pageData[key]} />;
   return <Home />;
 }
 
 function Home() {
-  const [slideIndex, setSlideIndex] = React.useState(0);
-
-  React.useEffect(() => {
-    const id = window.setInterval(() => {
-      setSlideIndex((index) => (index + 1) % heroSlides.length);
-    }, 6200);
-    return () => window.clearInterval(id);
-  }, []);
-
   return (
     <>
       <section className="hero" aria-label="Vantage Performance Club">
-        {heroSlides.map((slide, index) => (
-          <img
-            className={`hero-image ${index === slideIndex ? "visible" : ""}`}
-            src={slide.image}
-            alt={slide.label}
-            key={slide.image}
-          />
-        ))}
+        <img
+          className="hero-image"
+          src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=2400&q=90"
+          alt="Private strength training floor"
+        />
         <div className="hero-vignette" />
         <div className="hero-plate">
-          <p className="kicker">Private performance club / founders in motion</p>
-          <h1>
-            <span>Built for </span>
-            <span>the body that </span>
-            <span>carries the deal.</span>
-          </h1>
+          <p className="kicker">Private performance / Dubai + remote</p>
+          <h1>Strength that travels with you.</h1>
           <p>
-            Strength, recovery, and travel-proof training systems for CEOs, founders, and digital nomads who
-            cannot afford a fragile routine.
+            Private coaching, recovery, and travel programming for founders and executives. One plan, rebuilt
+            around every city and every demanding week.
           </p>
           <div className="hero-actions">
             <a className="button primary" href="#/apply">
-              Request Intake
+              Request a private call
               <CalendarDays size={17} />
             </a>
-            <a className="button secondary" href="#/system">
-              See the System
+            <a className="button secondary" href="#/residencies">
+              View programs
               <ArrowRight size={17} />
             </a>
           </div>
         </div>
-        <div className="hero-meter">
-          <span>{String(slideIndex + 1).padStart(2, "0")}</span>
-          <span>{heroSlides[slideIndex].label}</span>
+        <div className="hero-note">
+          <span>Now accepting Q3</span>
+          <span>12 memberships available</span>
         </div>
       </section>
 
-      <section className="signal-strip" aria-label="Performance signals">
-        {[
-          ["4:1", "maximum floor ratio"],
-          ["24h", "travel plan turnaround"],
-          ["0", "public membership feed"],
-          ["3", "global residency markets"],
-        ].map(([value, label]) => (
-          <div key={label}>
-            <strong>{value}</strong>
-            <span>{label}</span>
-          </div>
-        ))}
-      </section>
-
+      <ServiceStandards />
       <IntroSection />
       <ResidencyCarousel />
       <SystemSection />
-      <EditorialSection />
+      <FieldhouseSection />
+      <MembershipSection />
       <ApplyPanel />
     </>
+  );
+}
+
+function ServiceStandards() {
+  const standards = [
+    ["12", "members maximum per coach"],
+    ["24h", "travel-program turnaround"],
+    ["3", "formal reviews each quarter"],
+    ["1:1", "private coached sessions"],
+  ];
+
+  return (
+    <section className="signal-strip" aria-label="Vantage service standards">
+      {standards.map(([value, label]) => (
+        <div key={label}>
+          <strong>{value}</strong>
+          <span>{label}</span>
+        </div>
+      ))}
+    </section>
   );
 }
 
@@ -319,13 +293,18 @@ function IntroSection() {
   return (
     <section className="intro-section">
       <div>
-        <p className="kicker">The Club</p>
-        <h2>Not a gym. A private operating room for strength, sleep, and composure.</h2>
+        <p className="kicker">The practice</p>
+        <h2>A private coaching relationship built around work and travel.</h2>
       </div>
-      <p>
-        Vantage is designed for high-output lives: late flights, board weeks, investor dinners, temporary
-        apartments, and the kind of schedule that turns generic wellness into decorative noise.
-      </p>
+      <div className="intro-copy">
+        <p>
+          Your coach owns the full plan: assessment, strength, conditioning, recovery, and the version you use
+          when equipment or time changes.
+        </p>
+        <a className="text-link" href="#/system">
+          Read the Vantage Standard <ArrowRight size={15} />
+        </a>
+      </div>
     </section>
   );
 }
@@ -333,6 +312,7 @@ function IntroSection() {
 function ResidencyCarousel() {
   const railRef = React.useRef(null);
   const orbRef = React.useRef(null);
+  const orbRafRef = React.useRef(null);
   const dragRef = React.useRef({
     active: false,
     startX: 0,
@@ -349,6 +329,14 @@ function ResidencyCarousel() {
   const [orbVisible, setOrbVisible] = React.useState(false);
   const [dragging, setDragging] = React.useState(false);
 
+  React.useEffect(
+    () => () => {
+      if (orbRafRef.current) window.cancelAnimationFrame(orbRafRef.current);
+      if (dragRef.current.scrollRaf) window.cancelAnimationFrame(dragRef.current.scrollRaf);
+    },
+    [],
+  );
+
   const setActiveIndex = React.useCallback((index) => {
     if (Number.isNaN(index) || index === dragRef.current.hoverIndex) return;
     dragRef.current.hoverIndex = index;
@@ -361,8 +349,7 @@ function ResidencyCarousel() {
         .elementsFromPoint(event.clientX, event.clientY)
         .map((element) => (element instanceof HTMLElement ? element.closest("[data-carousel-index]") : null))
         .find(Boolean);
-      if (!card) return;
-      setActiveIndex(Number(card.dataset.carouselIndex));
+      if (card) setActiveIndex(Number(card.dataset.carouselIndex));
     },
     [setActiveIndex],
   );
@@ -377,22 +364,25 @@ function ResidencyCarousel() {
 
     rail.querySelectorAll("[data-carousel-index]").forEach((card) => {
       const rect = card.getBoundingClientRect();
-      const cardCenter = rect.left + rect.width / 2;
-      const nextDistance = Math.abs(cardCenter - center);
+      const nextDistance = Math.abs(rect.left + rect.width / 2 - center);
       if (nextDistance < distance) {
         distance = nextDistance;
         closest = Number(card.dataset.carouselIndex);
       }
     });
-
     setActiveIndex(closest);
   }, [setActiveIndex]);
 
   const moveOrb = (event) => {
-    const orb = orbRef.current;
-    if (!orb) return;
-    window.requestAnimationFrame(() => {
-      orb.style.transform = `translate(${event.clientX}px, ${event.clientY}px) translate(-50%, -50%)`;
+    if (!orbRef.current) return;
+    const x = event.clientX;
+    const y = event.clientY;
+    if (orbRafRef.current) window.cancelAnimationFrame(orbRafRef.current);
+    orbRafRef.current = window.requestAnimationFrame(() => {
+      if (orbRef.current) {
+        orbRef.current.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
+      }
+      orbRafRef.current = null;
     });
   };
 
@@ -423,7 +413,6 @@ function ResidencyCarousel() {
   const onPointerMove = (event) => {
     moveOrb(event);
     if (event.pointerType !== "touch") syncActiveToPointer(event);
-
     const state = dragRef.current;
     const rail = railRef.current;
     if (!state.active || !rail || event.pointerType === "touch") return;
@@ -440,30 +429,27 @@ function ResidencyCarousel() {
       state.targetScrollLeft = state.scrollLeft - dx;
       if (!state.scrollRaf) {
         state.scrollRaf = window.requestAnimationFrame(() => {
-          rail.scrollLeft = dragRef.current.targetScrollLeft;
+          if (railRef.current) railRef.current.scrollLeft = dragRef.current.targetScrollLeft;
           dragRef.current.scrollRaf = null;
         });
       }
     }
   };
 
-  const onPointerUp = (event) => {
+  const finishPointer = (event) => {
     const state = dragRef.current;
     const rail = railRef.current;
     if (!state.active || event.pointerType === "touch") return;
-
     if (rail?.hasPointerCapture(event.pointerId)) rail.releasePointerCapture(event.pointerId);
     if (state.scrollRaf) {
       window.cancelAnimationFrame(state.scrollRaf);
       state.scrollRaf = null;
       if (rail) rail.scrollLeft = state.targetScrollLeft;
     }
-
     if (!state.moved && state.targetIndex !== null) {
       state.openedFromPointer = true;
       openResidency(state.targetIndex);
     }
-
     if (state.moved) syncActiveToPointer(event);
     dragRef.current.active = false;
     window.setTimeout(() => setDragging(false), 80);
@@ -473,19 +459,22 @@ function ResidencyCarousel() {
     if (dragRef.current.openedFromPointer || dragRef.current.moved) {
       event.preventDefault();
       dragRef.current.openedFromPointer = false;
+      dragRef.current.moved = false;
       return;
     }
     openResidency(index);
   };
 
   return (
-    <section className="residency-section" aria-label="Residency programs">
+    <section className="residency-section" aria-label="Vantage programs">
       <div className="section-heading">
-        <p className="kicker">Residencies</p>
-        <h2>Select the pressure you are under.</h2>
+        <div>
+          <p className="kicker">Programs</p>
+          <h2>Choose the structure your schedule needs now.</h2>
+        </div>
         <p>
-          Each block is built around a constraint: travel fatigue, strength loss, poor sleep, public visibility,
-          or the blank space between cities.
+          Long-term private coaching, remote continuity, and short residencies. Every program states its duration,
+          level of support, and starting investment.
         </p>
       </div>
       <div
@@ -493,11 +482,13 @@ function ResidencyCarousel() {
         onPointerEnter={() => setOrbVisible(true)}
         onPointerLeave={() => {
           setOrbVisible(false);
+          dragRef.current.active = false;
           setDragging(false);
         }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
-        onPointerUp={onPointerUp}
+        onPointerUp={finishPointer}
+        onPointerCancel={finishPointer}
       >
         <div ref={orbRef} className={`drag-orb ${orbVisible ? "visible" : ""}`}>
           Drag
@@ -526,13 +517,17 @@ function ResidencyCarousel() {
                 }
               }}
             >
-              <img src={residency.image} alt={`${residency.title} training block`} draggable="false" />
+              <img src={residency.image} alt={`${residency.title} training`} draggable="false" />
               <div className="card-meta">
                 <span>{residency.eyebrow}</span>
                 <span>{residency.location}</span>
               </div>
               <h3>{residency.title}</h3>
               <p>{residency.copy}</p>
+              <div className="card-price">
+                <span>{residency.price}</span>
+                <ArrowRight size={16} />
+              </div>
             </article>
           ))}
         </div>
@@ -543,26 +538,10 @@ function ResidencyCarousel() {
 
 function SystemSection() {
   const items = [
-    {
-      icon: <Radar size={21} />,
-      title: "Calendar-aware load",
-      copy: "Training volume moves around travel, board weeks, investor dinners, and the days where sleep is already compromised.",
-    },
-    {
-      icon: <Plane size={21} />,
-      title: "City translations",
-      copy: "Every member gets hotel, apartment, and local gym versions of the week before they board.",
-    },
-    {
-      icon: <Gauge size={21} />,
-      title: "Recovery as output",
-      copy: "Breathwork, mobility, deloads, and nutrition defaults are treated as performance inputs, not spa extras.",
-    },
-    {
-      icon: <Fingerprint size={21} />,
-      title: "Private by default",
-      copy: "No feed, no class schedule, no public leaderboard. The work is confidential, measured, and appointment-only.",
-    },
+    { icon: <Radar size={20} />, title: "Assess", copy: "Movement, strength, sleep, injury history, travel, and calendar constraints." },
+    { icon: <Dumbbell size={20} />, title: "Build", copy: "A progressive 12-week block with primary sessions and practical fallback versions." },
+    { icon: <Plane size={20} />, title: "Translate", copy: "The exact plan for each hotel, apartment, or temporary training floor." },
+    { icon: <Gauge size={20} />, title: "Review", copy: "Scheduled checkpoints for strength, capacity, recovery, and body composition." },
   ];
 
   return (
@@ -570,54 +549,142 @@ function SystemSection() {
       <div className="system-media">
         <img
           src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1700&q=88"
-          alt="Private performance coaching"
+          alt="Coach leading a private strength session"
         />
+        <div className="image-caption">
+          <span>Private session</span>
+          <span>Dubai Fieldhouse</span>
+        </div>
       </div>
       <div className="system-copy">
-        <p className="kicker">System</p>
-        <h2>Structure beats motivation when the week gets hostile.</h2>
-        <div className="system-grid">
-          {items.map((item) => (
+        <p className="kicker">The Vantage Standard</p>
+        <h2>One accountable coach. Four clear stages.</h2>
+        <p className="system-lede">
+          Your program is designed to survive changing locations and demanding weeks without losing progression.
+        </p>
+        <div className="system-list">
+          {items.map((item, index) => (
             <article key={item.title}>
+              <span className="system-number">0{index + 1}</span>
               <div className="icon-pill">{item.icon}</div>
-              <h3>{item.title}</h3>
-              <p>{item.copy}</p>
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.copy}</p>
+              </div>
             </article>
           ))}
+        </div>
+        <a className="button outline-light" href="#/system">
+          Explore the method <ArrowRight size={16} />
+        </a>
+      </div>
+    </section>
+  );
+}
+
+function FieldhouseSection() {
+  const details = [
+    [<MapPin size={18} />, "DIFC, Dubai", "Private arrival and appointment-only access"],
+    [<Clock3 size={18} />, "Mon-Sat", "Coached sessions from 06:00 to 21:00"],
+    [<ShieldCheck size={18} />, "Private by design", "No open gym, classes, cameras, or public leaderboard"],
+  ];
+
+  return (
+    <section className="fieldhouse-section">
+      <div className="fieldhouse-copy">
+        <p className="kicker">Dubai Fieldhouse</p>
+        <h2>The room supports the work.</h2>
+        <p>
+          A focused strength floor, recovery room, private changing, and coach desk. Every visit is scheduled;
+          nothing competes with the session.
+        </p>
+        <div className="facility-list">
+          {details.map(([icon, title, copy]) => (
+            <div key={title}>
+              <span>{icon}</span>
+              <strong>{title}</strong>
+              <p>{copy}</p>
+            </div>
+          ))}
+        </div>
+        <a className="text-link" href="#/fieldhouse">
+          View the Fieldhouse <ArrowRight size={15} />
+        </a>
+      </div>
+      <div className="fieldhouse-media">
+        <img
+          src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1800&q=88"
+          alt="Vantage private training floor"
+        />
+        <div className="facility-index">
+          <span>01 / Strength floor</span>
+          <span>02 / Recovery room</span>
+          <span>03 / Private changing</span>
         </div>
       </div>
     </section>
   );
 }
 
-function EditorialSection() {
+function MembershipSection() {
+  const tiers = [
+    {
+      label: "Fieldhouse",
+      title: "Private Membership",
+      price: "US$2,400",
+      suffix: "from / month",
+      copy: "For Dubai-based members who want private sessions and continuity when they travel.",
+      features: ["Two coached sessions each week", "Individual 12-week programming", "Quarterly performance review", "Travel-program rewrites"],
+    },
+    {
+      label: "Worldwide",
+      title: "Global Continuity",
+      price: "US$1,250",
+      suffix: "from / month",
+      copy: "For members working between cities who need one plan adapted to changing equipment.",
+      features: ["Weekly program review", "Async coach access", "Hotel and apartment versions", "Quarterly remote assessment"],
+    },
+    {
+      label: "Private block",
+      title: "Executive Residency",
+      price: "US$6,800",
+      suffix: "from / 10 days",
+      copy: "For an intensive reset after travel or before a concentrated period of work.",
+      features: ["Initial assessment", "Five private sessions", "Recovery and sleep plan", "Four-week departure program"],
+    },
+  ];
+
   return (
-    <section className="editorial-section">
-      <div className="section-heading">
-        <p className="kicker">Dispatch</p>
-        <h2>The field notes are practical, not inspirational.</h2>
+    <section className="membership-section">
+      <div className="membership-heading">
+        <div>
+          <p className="kicker">Membership</p>
+          <h2>Know what is included before you apply.</h2>
+        </div>
+        <p>All prices are starting investments. Final recommendations follow a confidential fit call.</p>
       </div>
-      <div className="editorial-grid">
-        <article className="editorial-feature">
-          <img
-            src="https://images.unsplash.com/photo-1532029837206-abbe2b7620e3?auto=format&fit=crop&w=1600&q=88"
-            alt="Strength training detail"
-          />
-          <div>
-            <span>Travel systems</span>
-            <h3>The hotel gym audit for people who only have 42 minutes.</h3>
-          </div>
-        </article>
-        <article>
-          <span>Recovery</span>
-          <h3>When sleep is the bottleneck, discipline is the wrong lever.</h3>
-          <p>How we reduce load, move nutrition earlier, and protect the nervous system during deal weeks.</p>
-        </article>
-        <article>
-          <span>Nutrition</span>
-          <h3>The client dinner protocol.</h3>
-          <p>Ordering rules that keep body composition moving without turning dinner into a performance.</p>
-        </article>
+      <div className="membership-grid">
+        {tiers.map((tier, index) => (
+          <article className={index === 0 ? "featured" : ""} key={tier.title}>
+            <span className="tier-label">{tier.label}</span>
+            <h3>{tier.title}</h3>
+            <p className="tier-copy">{tier.copy}</p>
+            <div className="tier-price">
+              <strong>{tier.price}</strong>
+              <span>{tier.suffix}</span>
+            </div>
+            <ul>
+              {tier.features.map((feature) => (
+                <li key={feature}>
+                  <Check size={15} /> {feature}
+                </li>
+              ))}
+            </ul>
+            <a className="text-link" href="#/apply">
+              Discuss this option <ArrowRight size={15} />
+            </a>
+          </article>
+        ))}
       </div>
     </section>
   );
@@ -626,16 +693,19 @@ function EditorialSection() {
 function ApplyPanel() {
   return (
     <section className="apply-panel">
-      <p className="kicker">Quarterly Intake</p>
-      <h2>Build the system before the calendar breaks the routine.</h2>
-      <p>
-        Apply for private membership, a residency block, or remote continuity. Intake is limited so coach attention
-        and floor privacy stay intact.
-      </p>
-      <a className="button primary light" href="#/apply">
-        Start Intake
-        <ArrowRight size={17} />
-      </a>
+      <div>
+        <p className="kicker">Confidential intake</p>
+        <h2>Start with a 20-minute private call.</h2>
+      </div>
+      <div>
+        <p>
+          Tell us where you train, how often you travel, and what you need to change. You will receive a fit decision
+          and recommended program within two business days.
+        </p>
+        <a className="button light" href="#/apply">
+          Request a call <ArrowRight size={17} />
+        </a>
+      </div>
     </section>
   );
 }
@@ -669,29 +739,110 @@ function Page({ data }) {
   );
 }
 
+function ApplyPage() {
+  const [submitted, setSubmitted] = React.useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSubmitted(true);
+  };
+
+  return (
+    <article className="apply-page">
+      <section className="apply-intro">
+        <div>
+          <p className="kicker">Private intake</p>
+          <h1>A short conversation before any recommendation.</h1>
+        </div>
+        <div className="process-list">
+          <div><span>01</span><p>Share your schedule, training history, travel, and intended outcome.</p></div>
+          <div><span>02</span><p>Complete a confidential 20-minute fit call with the performance team.</p></div>
+          <div><span>03</span><p>Receive a program recommendation and clear starting investment within two business days.</p></div>
+        </div>
+      </section>
+
+      <section className="intake-layout">
+        <aside>
+          <Fingerprint size={25} />
+          <h2>Private by default.</h2>
+          <p>Your information is used only to assess fit and is never added to a marketing list.</p>
+          <div className="intake-meta">
+            <span>Q3 intake</span><strong>12 places</strong>
+            <span>Response time</span><strong>2 business days</strong>
+            <span>Locations</span><strong>Dubai + worldwide</strong>
+          </div>
+        </aside>
+        {submitted ? (
+          <div className="form-success" role="status">
+            <Check size={28} />
+            <p className="kicker">Request received</p>
+            <h2>Thank you. The performance team will reply within two business days.</h2>
+            <a className="text-link" href="#home">Return home <ArrowRight size={15} /></a>
+          </div>
+        ) : (
+          <form className="intake-form" onSubmit={handleSubmit}>
+            <div className="field-row">
+              <label>First name<input name="firstName" autoComplete="given-name" required /></label>
+              <label>Last name<input name="lastName" autoComplete="family-name" required /></label>
+            </div>
+            <div className="field-row">
+              <label>Work email<input name="email" type="email" autoComplete="email" required /></label>
+              <label>Primary city<input name="city" autoComplete="address-level2" required /></label>
+            </div>
+            <label>
+              Program of interest
+              <select name="program" defaultValue="">
+                <option value="" disabled>Select a program</option>
+                <option>Private Membership</option>
+                <option>Global Continuity</option>
+                <option>Executive Residency</option>
+                <option>Not sure yet</option>
+              </select>
+            </label>
+            <label>
+              What needs to change?
+              <textarea name="goals" rows="5" placeholder="Training history, travel rhythm, constraints, and the outcome you need." required />
+            </label>
+            <label className="consent-row">
+              <input type="checkbox" required />
+              <span>I agree to be contacted about this private intake request.</span>
+            </label>
+            <button className="button primary submit-button" type="submit">
+              Request private call <ArrowRight size={17} />
+            </button>
+          </form>
+        )}
+      </section>
+    </article>
+  );
+}
+
 function ResidencyDetail({ residency }) {
   return (
     <article className="detail-page">
-      <a className="back-link" href="#home">
+      <a className="back-link" href="#/residencies">
         <ArrowLeft size={16} />
-        Back to residencies
+        All programs
       </a>
       <section className="detail-hero">
         <div>
           <p className="kicker">{residency.eyebrow}</p>
           <h1>{residency.title}</h1>
           <p>{residency.copy}</p>
+          <div className="detail-commercial">
+            <div><span>Starting investment</span><strong>{residency.price}</strong></div>
+            <div><span>Availability</span><strong>{residency.capacity}</strong></div>
+          </div>
           <div className="chip-row">
             {residency.stats.map((stat) => (
               <span key={stat}>{stat}</span>
             ))}
           </div>
           <a className="button primary" href="#/apply">
-            Request This Block
-            <ArrowRight size={17} />
+            Discuss this program <ArrowRight size={17} />
           </a>
         </div>
-        <img src={residency.image} alt={`${residency.title} residency`} />
+        <img src={residency.image} alt={`${residency.title} program`} />
       </section>
     </article>
   );
@@ -701,21 +852,16 @@ function Footer() {
   return (
     <footer className="footer">
       <div>
-        <a className="wordmark" href="#home">
-          Vantage
-        </a>
-        <p>Private performance club for founders, CEOs, and digital nomads.</p>
+        <a className="wordmark footer-wordmark" href="#home">Vantage</a>
+        <p>Private strength, conditioning, and travel coaching.</p>
       </div>
       <div className="footer-links">
-        {navItems.map((item) => (
-          <a href={item.path} key={item.path}>
-            {item.label}
-          </a>
-        ))}
+        {navItems.map((item) => <a href={item.path} key={item.path}>{item.label}</a>)}
       </div>
       <div className="footer-meta">
-        <span>Dubai / Singapore / Lisbon / Remote</span>
-        <span>intake@vantage.club</span>
+        <span>DIFC, Dubai / Worldwide coaching</span>
+        <a href="mailto:intake@vantage.club">intake@vantage.club</a>
+        <span>By appointment / Mon-Sat</span>
       </div>
     </footer>
   );
